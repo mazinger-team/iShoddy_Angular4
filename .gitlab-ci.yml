@@ -1,0 +1,14 @@
+stages:
+  - build
+
+Build:
+  before_script:
+    - apt-get update
+    - apt-get install -y lftp
+    - npm install -g angular-cli
+    - npm install
+  stage: build
+  script: 
+    - ng build --prod
+
+
