@@ -1,0 +1,49 @@
+@import '../../assets/custom';
+
+.category-item{
+    width: 278px;
+    height: 110px;
+    text-transform: uppercase;
+    background-position: center;
+    background-size: cover; 
+    color: $gray-lighter;
+    margin: $card-deck-margin;
+    overflow: hidden;
+    position: relative;
+    z-index:1;
+}
+
+.category-item:after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 3;
+}
+.category-item img {
+    width: 100%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index:2;
+}
+
+.category-item p {
+    position: absolute;
+    bottom: $card-deck-margin/2;
+    left: $card-deck-margin/2;
+    margin: 0;
+    z-index: 9;
+}
+
+@media (max-width: $grid-breakpoint-md - 1) {
+    .category-item{
+        width:100%;
+        margin: 0;
+    }
+}
+

@@ -1,0 +1,38 @@
+$font-family-sans-serif: Montserrat;
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              #332C2F;   // #333
+$gray:                   #6A3281; // #555
+$gray-light:             #E2D0EA; // #777
+$gray-lighter:           #FBF9FC; // #eee
+
+$brand-primary:         #8E44AD; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$btn-secondary-color: $brand-primary;
+$carousel-control-color: $brand-primary;
+$carousel-indicator-active-bg: $brand-primary !default;
+
+/* Grid */ 
+$grid-gutter-width-base:     42px !default;
+$card-deck-margin:          ($grid-gutter-width-base / 2) !default;
+
+$grid-breakpoint-xs: 0 !default;
+$grid-breakpoint-sm: 576px !default;
+$grid-breakpoint-md: 768px !default;
+$grid-breakpoint-lg: 992px !default;
+$grid-breakpoint-xl: 1200px !default;
+
+/* Fonts */
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:   1.25rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;

@@ -1,22 +1,81 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+<div class="container">
+  <ishoddy-header-bar></ishoddy-header-bar>
+
+  <div class="row">
+      <ngb-carousel class="hidden-xs-down">
+          <ng-template ngbSlide>
+              <div class="lighten">
+                  <img src="assets/images/services.jpg" alt="Fondo de un lápiz sobre un plano">
+              </div>
+              <div class="text-primary carousel-caption">
+                  <h1>Solicita un servicio</h1>
+                  <ul class="list-unstyled">
+                      <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> - Selecciona una categoría.</li>
+                      <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> - Indica lo que necesitas...</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i> - y espera lo que necesitas.</li>
+                  </ul>
+                  <button type="button" class="btn btn-primary pull-right">
+                      <i class="fa fa-user fa-lg" aria-hidden="true"></i> Regístrate 
+                  </button>
+              </div>
+          </ng-template>
+          <ng-template ngbSlide>
+              <div class="lighten">
+                      <img src="assets/images/budget.jpg" alt="Fondo de un lápiz sobre un plano"  class="lighten">
+              </div>
+              <div class="text-primary carousel-caption">
+                  <h1>Ofrece un servicio</h1>
+                  <ul class="list-unstyled">
+                      <li><i class="fa fa-paper-plane" aria-hidden="true"></i> - Recibe demandas en tu correo.</li>
+                      <li><i class="fa fa-eur" aria-hidden="true"></i> - Envía tu presupuesto...</li>
+                      <li><i class="fa fa-wrench" aria-hidden="true"></i> - y comienza a trabajar.</li>
+                  </ul>
+                  <button type="button" class="btn btn-primary pull-right">
+                      <i class="fa fa-user fa-lg" aria-hidden="true"></i> Regístrate 
+                  </button>
+                  </div>
+          </ng-template>
+      </ngb-carousel>        
+  </div>
+
+  <ishoddy-categories-list></ishoddy-categories-list>
+
+  <div class="row">
+      <div class="col mobile-app">
+          <div class="row">
+              <img class="img-fluid col-sm-6 hidden-sm-down" src="assets/images/bajarApp.jpg" alt="chica mostrando nuestra app">
+              <div class="col-md-6 cta-download">
+                  <p>Hemos hecho aún más fácil obtener lo que quieres, donde quiera que estés. Envíe solicitudes y reciba presupuestos desde cualquier lugar con la aplicación móvil de iShoddy.</p>
+                  <button type="button" class="btn btn-secondary btn-md-up-lg pull-right btn-apple">
+                      <i class="fa fa-apple fa-lg" aria-hidden="true"></i> Descarga 
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-md-up-lg btn-android">
+                          <i class="fa fa-android fa-lg" aria-hidden="true"></i> Descarga 
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <ishoddy-all-categories></ishoddy-all-categories>
+
+  <footer class="row">
+      <div class="col-6">
+          <div class="logo-grp">
+                  <img  class="logo" src="assets/images/logo.png" alt="logo ishoddy">
+                  <span class="iShoddy">iShoddy</span>
+          </div>
+          <p>Quienes somos</p>
+          <p>Contacto</p>
+      </div>
+      <div class="col-6">
+          <p class="text-right">Descargar iShoddy <i class="fa fa-apple fa-lg" aria-hidden="true"></i> <i class="fa fa-android fa-lg" aria-hidden="true"></i></p>
+          <p class="text-right">Condiciones del servicio</p>
+          <p class="text-right">Privacidad</p>
+      </div>
+      <div class="row copyright">
+              <p class="text-center">Copyright &copy; 2017 iShoddy &copy; de sus respectivos propietarios</p>
+      </div>
+  </footer>
 </div>
-
-<h2>Aquí unos enlaces por donde empezar: </h2>
-<md-toolbar>
-  <span><a target="_blank" href="https://angular.io/tutorial">Tour de los Heroes</a></span>
-
-  <md-toolbar-row>
-    <span><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentacion</a></span>
-  </md-toolbar-row>
-
-  <md-toolbar-row>
-    <span><a target="_blank" href="http://angularjs.blogspot.com/">Angular blog</a></span>
-  </md-toolbar-row>
-</md-toolbar>
-
 
