@@ -1,14 +1,13 @@
 stages:
   - build
 
-Build:
+Build_OSX:
   before_script:
-    - apt-get update
-    - apt-get install -y lftp
-    - npm install -g angular-cli
     - npm install
   stage: build
   script: 
-    - ng build --prod
-
+    - ng build -prod --aot=false --base-href=./ --extract-css=false
+    - tar -czvf dist.tar.gz dist
+    - scp -i ~/Downloads/mazinger.pem -P 3659 dist.tar.gz ubuntu@ec2-54-202-209-58.us-west-2.compute.amazonaws.com:/home/ubuntu/uploads
+    - ssh -p 3659 -i ~/Downloads/mazinger.pem ubuntu@ec2-54-202-209-58.us-west-2.compute.amazonaws.com "tar -xzvf ~/uploads/dist.tar.gz && sudo rm -rf /var/www/html/* && sudo mv ~/dist/* /var/www/html/"
 

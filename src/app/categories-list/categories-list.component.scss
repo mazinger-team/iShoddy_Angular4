@@ -12,3 +12,14 @@
     font-weight: 300;
 }
 
+ishoddy-category-item {
+    width: auto;
+}
+
+@media (max-width: $grid-breakpoint-md - 1) {
+    ishoddy-category-item {
+        width: 100%;
+    }
+    
+}
+

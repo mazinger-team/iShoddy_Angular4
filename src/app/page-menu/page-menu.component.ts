@@ -12,4 +12,8 @@ export class PageMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  controlVisibility = function(event) {
+
+  }
+
 }
