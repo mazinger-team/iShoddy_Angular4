@@ -1,0 +1,16 @@
+<div class="professional-item">
+  <img src="{{item.logo_url}}" alt="imagen del profesional">
+  <p class="name">{{ item.corp_name }}</p>
+  <p class="category">{{ item.category.name }}</p>
+  <div class="data-prof">
+    <div class="classification">
+      <span class="stars"><i class="fa fa-star" aria-hidden="true"></i> {{ item.rating }}/5</span>
+      <p> {{ item.reviews_number }} reseñas </p>
+    </div>
+    <div class="more-info">
+      <div class="photo"><i class="fa fa-camera" aria-hidden="true"></i> {{ item.photo_number }}</div>
+      <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> 1.5 Km </div>
+    </div>
+    <div class="end-data-prof"></div>
+  </div>
+</div>

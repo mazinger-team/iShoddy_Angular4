@@ -3,7 +3,7 @@ import { Subcategory } from './subcategory';
 
 export class Category {
     private constructor(
-        public id: number,
+        public id: string,
         public name: string,
         public active: boolean,
         public modificationDate: Date,

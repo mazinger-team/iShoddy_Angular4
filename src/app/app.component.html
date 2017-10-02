@@ -37,8 +37,8 @@
           </ng-template>
       </ngb-carousel>        
   </div>
-
-  <ishoddy-categories-list></ishoddy-categories-list>
+  <ishoddy-categories-list *ngIf="!_showProfessionals" (categorySelected)="showCategory($event)"></ishoddy-categories-list>
+  <ishoddy-professionals-list *ngIf="_showProfessionals" (showCategories)="showProfessional()" [category]="_category"></ishoddy-professionals-list>
 
   <div class="row">
       <div class="col mobile-app">

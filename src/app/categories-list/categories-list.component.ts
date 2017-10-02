@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Category } from './../category';
 import { CategoriesService } from './../categories.service';
@@ -15,6 +15,8 @@ export class CategoriesListComponent implements OnInit {
 
   constructor(private _categoriesService: CategoriesService) { }
 
+  @Output() categorySelected: EventEmitter<Category> = new EventEmitter<Category>();
+  
   ngOnInit() {
     //obtiene las categorías;
     //this._categories = this._categoriesService.getLocalCategories();
@@ -26,4 +28,10 @@ export class CategoriesListComponent implements OnInit {
         });
   
   }
+
+  showProfessionals(category: Category):void {
+    this.categorySelected.emit(category);
+  }
+
+
 };
