@@ -21,11 +21,13 @@ export class CategoriesListComponent implements OnInit {
     //obtiene las categorías;
     //this._categories = this._categoriesService.getLocalCategories();
     
-    this._categoriesService
-        .getCategories()
-        .subscribe((categories: Category[]) => {
-          this._categories = categories;
-        });
+    if (!this._categories) {
+      this._categoriesService
+      .getCategories()
+      .subscribe((categories: Category[]) => {
+        this._categories = categories;
+      });
+    }
   
   }
 

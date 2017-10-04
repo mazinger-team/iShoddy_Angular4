@@ -1,30 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Category } from './category';
-import { Professional } from './professional';
-import { ProfessionalsService } from './professionals.service';
+import { CategoriesService } from "./categories.service";
 
 @Component({
   selector: 'root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit{
   private title = 'iShoddy';
-  private _category:string = "";
-  private _showProfessionals = false;
 
-  private _professionals: Professional[];
+  private _categories: Category[];
 
-  constructor(private _professionalsService: ProfessionalsService) { }
+  constructor(private _categoriesService: CategoriesService) { }
 
-  showCategory(category: Category):void {
-    this._category = category.name;
-    this._showProfessionals = true;
+  ngOnInit() {
+    this._categoriesService
+    .getCategories()
+    .subscribe((categories: Category[]) => {
+      this._categories = categories;
+    });  
   }
 
-  showProfessional():void {
-    this._showProfessionals = false;
-  }
-    
 }

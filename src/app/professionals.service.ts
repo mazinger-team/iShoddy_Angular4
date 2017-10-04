@@ -14,7 +14,7 @@ export class ProfessionalsService {
   getProfessionals(category: string): Observable<Professional[]> {
 
     return this._http
-        .get(environment.profUrl + (category ? "/?category.name="+category : ""))
+        .get(environment.url + "professionals" + (category ? "/?category="+category : ""))
         .map((data: Response) => {
           return data.json();
         })

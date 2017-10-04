@@ -10,7 +10,6 @@ import { Category } from './../category';
 })
 export class CategoryItemComponent {
 
-//  @Input() item: Object;
   @Input() item: Category;
   
   constructor() {

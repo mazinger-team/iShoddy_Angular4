@@ -4,8 +4,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AppRoutingModule } from "./app-routing/app-routing.module";
+
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { PageMenuComponent } from './page-menu/page-menu.component';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
@@ -16,6 +19,8 @@ import { ProfessionalItemComponent } from './professional-item/professional-item
 
 import { CategoriesService } from './categories.service';
 import { ProfessionalsService } from './professionals.service';
+import { CoverPageComponent } from './cover-page/cover-page.component';
+import { AllCategoriesDetailComponent } from './all-categories-detail/all-categories-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +32,11 @@ import { ProfessionalsService } from './professionals.service';
     AllCategoriesComponent,
     CategoryItemComponent,
     ProfessionalItemComponent,
+    CoverPageComponent,
+    AllCategoriesDetailComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpModule,
     NoopAnimationsModule,
