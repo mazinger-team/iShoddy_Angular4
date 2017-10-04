@@ -21,7 +21,8 @@ export class AppComponent implements OnInit{
     .getCategories()
     .subscribe((categories: Category[]) => {
       this._categories = categories;
-    });  
+    });
+    
   }
 
 }
