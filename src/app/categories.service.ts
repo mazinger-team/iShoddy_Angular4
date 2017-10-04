@@ -19,12 +19,16 @@ export class CategoriesService {
     // options.headers = headers;
 
     return this._http
-        .get(environment.url)
+        .get(environment.url+"categories/")
         .map((data: Response) => {
           return data.json();
         })
         .map((json: any) => {
-          return json.listCategoriesOutputType.categories as Category[];
+          let collection = json.listCategoryOutputType.categories as Category[];
+          collection.sort((c1,c2) => {
+            return c2.subcategories.length - c1.subcategories.length;
+          });
+          return collection;
         });
   }
 }

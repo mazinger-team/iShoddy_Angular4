@@ -3,10 +3,10 @@ import { Subcategory } from './subcategory';
 
 export class Category {
     private constructor(
-        public id: number,
+        public _id: string,
         public name: string,
         public active: boolean,
-        public modificationDate: Date,
+        public modificationDay: Date,
         public urlLogo: string, 
         public subcategories: [Subcategory]
 
@@ -14,10 +14,10 @@ export class Category {
     
       static fromJson(json: any): Category {
         return new Category(
-          json.id,
+          json._id,
           json.name,
           json.active,
-          new Date(json.modificationDate),
+          new Date(json.modificationDay),
           json.urlLogo,
           json.subcategories
         );

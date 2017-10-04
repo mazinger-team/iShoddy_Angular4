@@ -1,0 +1,43 @@
+@import '../../assets/custom';
+
+professionals-list {
+    background-color: white;    
+}
+.professionals-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+}
+
+.blank-state {
+    width: 100%;
+    height: 20vh;
+    padding: 9vh;
+    text-align: center;
+    font-size: $font-size-base * 2;
+    background-color: $gray-lighter;
+    color: $brand-primary;
+}
+
+@media (max-width: $grid-breakpoint-sm - 1) {
+    .blank-state {
+        height: 180px;
+        font-size: $font-size-lg;
+    }    
+}
+
+
+button.goback {
+    background-color: $brand-primary;
+    color: white;
+    display: block;
+    margin: $card-deck-margin auto;
+}
+
+
+
+

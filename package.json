@@ -12,14 +12,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.4.0-RC.0",
-    "@angular/cdk": "github:angular/cdk-builds",
+    "@angular/animations": "^4.4.4",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
-    "@angular/material": "github:angular/material2-builds",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
@@ -28,6 +26,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "popper.js": "^1.12.5",
     "rxjs": "^5.4.1",
     "tether": "^1.4.0",
     "zone.js": "^0.8.14"

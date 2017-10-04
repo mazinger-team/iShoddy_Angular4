@@ -1,7 +1,7 @@
 <div class="container">
   <ishoddy-header-bar></ishoddy-header-bar>
 
-  <div class="row">
+  <div class="row carousel">
       <ngb-carousel class="hidden-xs-down">
           <ng-template ngbSlide>
               <div class="lighten">
@@ -37,15 +37,16 @@
           </ng-template>
       </ngb-carousel>        
   </div>
-
-  <ishoddy-categories-list></ishoddy-categories-list>
-
-  <div class="row">
+  <div>
+      <router-outlet></router-outlet>
+  </div>
+  
+  <div class="row download-app">
       <div class="col mobile-app">
           <div class="row">
               <img class="img-fluid col-sm-6 hidden-sm-down" src="assets/images/bajarApp.jpg" alt="chica mostrando nuestra app">
               <div class="col-md-6 cta-download">
-                  <p>Hemos hecho aún más fácil obtener lo que quieres, donde quiera que estés. Envíe solicitudes y reciba presupuestos desde cualquier lugar con la aplicación móvil de iShoddy.</p>
+                  <p>Hemos hecho aún más fácil obtener lo que quieres, donde quiera que estés. Envía solicitudes y recibe presupuestos desde cualquier lugar con la aplicación móvil de iShoddy.</p>
                   <button type="button" class="btn btn-secondary btn-md-up-lg pull-right btn-apple">
                       <i class="fa fa-apple fa-lg" aria-hidden="true"></i> Descarga 
                   </button>
@@ -57,7 +58,7 @@
       </div>
   </div>
 
-  <ishoddy-all-categories></ishoddy-all-categories>
+  <ishoddy-all-categories [categories]="_categories"></ishoddy-all-categories>
 
   <footer class="row">
       <div class="col-6">
