@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { CoverPageComponent } from "./../cover-page/cover-page.component";
+import { RegistryUserComponent } from "../registry/user-registry.component";
+
 
 @NgModule({
   imports: [
@@ -12,12 +14,15 @@ import { CoverPageComponent } from "./../cover-page/cover-page.component";
 //        resolve: {
 //           articles: ArticlesResolveService
 //         }
+      },{
+        path: "userregistry",
+        component: RegistryUserComponent
       },
       {
         path: "**",
         redirectTo: "/articles"
       }
-    ])
+    ], { useHash: true , enableTracing: true })
   ],
   exports: [RouterModule]
 })

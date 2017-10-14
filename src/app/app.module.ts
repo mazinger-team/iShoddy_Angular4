@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,10 @@ import { ProfessionalsService } from './professionals.service';
 import { CoverPageComponent } from './cover-page/cover-page.component';
 import { AllCategoriesDetailComponent } from './all-categories-detail/all-categories-detail.component';
 
+import { RegistryUserComponent } from './registry/user-registry.component';
+import { UserService } from './services/user/user-services';
+import { RequestWrapperService } from './services/common/request-wrapper.services';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +38,11 @@ import { AllCategoriesDetailComponent } from './all-categories-detail/all-catego
     ProfessionalItemComponent,
     CoverPageComponent,
     AllCategoriesDetailComponent,
+    RegistryUserComponent
   ],
   imports: [
     AppRoutingModule,
+    FormsModule,
     BrowserModule,
     HttpModule,
     NoopAnimationsModule,
@@ -44,7 +50,9 @@ import { AllCategoriesDetailComponent } from './all-categories-detail/all-catego
   ],
   providers: [
     CategoriesService,
-    ProfessionalsService
+    ProfessionalsService,
+    UserService,
+    RequestWrapperService
   ],
   bootstrap: [AppComponent]
 })

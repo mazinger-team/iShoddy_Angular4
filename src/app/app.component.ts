@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from "@angular/router";
 import { Category } from './category';
 import { CategoriesService } from "./categories.service";
 
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
 
   private _categories: Category[];
 
-  constructor(private _categoriesService: CategoriesService) { }
+  constructor(private _categoriesService: CategoriesService, private _router: Router) { }
 
   ngOnInit() {
     this._categoriesService
@@ -23,6 +23,11 @@ export class AppComponent implements OnInit{
       this._categories = categories;
     });
     
+  }
+
+  sendRegister(){
+    this._router.navigate(["/userregistry"]);
+
   }
 
 }
