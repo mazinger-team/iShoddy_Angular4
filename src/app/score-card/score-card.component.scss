@@ -1,0 +1,15 @@
+@import '../../assets/custom';
+
+ishoddy-score-card {
+    position: absolute;
+}
+
+.score-card {
+    display: inline-block;
+}
+
+.score-card p {
+    line-height: 1.4;
+    padding: 0;
+    margin: 0;
+}

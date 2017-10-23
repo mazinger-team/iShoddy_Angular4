@@ -1,3 +1,4 @@
 <ishoddy-categories-list *ngIf="!_showProfessionals" (categorySelected)="showCategory($event)"></ishoddy-categories-list>
+<ishoddy-professional-detail *ngIf="_showProfessionals"></ishoddy-professional-detail> 
 <ishoddy-professionals-list *ngIf="_showProfessionals" (showCategories)="showProfessional()" [category]="_category"></ishoddy-professionals-list>
 

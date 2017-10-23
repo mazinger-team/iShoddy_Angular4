@@ -25,6 +25,10 @@ import { AllCategoriesDetailComponent } from './all-categories-detail/all-catego
 import { RegistryUserComponent } from './registry/user-registry.component';
 import { UserService } from './services/user/user-services';
 import { RequestWrapperService } from './services/common/request-wrapper.services';
+import { ProfessionalDetailComponent } from './professional-detail/professional-detail.component';
+
+import { AgmCoreModule } from '@agm/core';
+import { ScoreCardComponent } from './score-card/score-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { RequestWrapperService } from './services/common/request-wrapper.service
     ProfessionalItemComponent,
     CoverPageComponent,
     AllCategoriesDetailComponent,
-    RegistryUserComponent
+    RegistryUserComponent,
+    ProfessionalDetailComponent,
+    ScoreCardComponent
   ],
   imports: [
     AppRoutingModule,
@@ -46,7 +52,10 @@ import { RequestWrapperService } from './services/common/request-wrapper.service
     BrowserModule,
     HttpModule,
     NoopAnimationsModule,
-    NgbModule.forRoot()
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBbb-s1UDI_g9IJUzObN-DQE7qDehtOPpg	'
+    }),
+    NgbModule.forRoot(),
   ],
   providers: [
     CategoriesService,

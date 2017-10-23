@@ -11,9 +11,6 @@ import { RegistryUserComponent } from "../registry/user-registry.component";
       {
         path: "",
         component: CoverPageComponent
-//        resolve: {
-//           articles: ArticlesResolveService
-//         }
       },{
         path: "userregistry",
         component: RegistryUserComponent
