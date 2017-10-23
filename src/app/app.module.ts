@@ -23,8 +23,16 @@ import { CoverPageComponent } from './cover-page/cover-page.component';
 import { AllCategoriesDetailComponent } from './all-categories-detail/all-categories-detail.component';
 
 import { RegistryUserComponent } from './registry/user-registry.component';
+import { DashBoardComponent } from './dashboard/dashboard.component';
+import { PublicAreaComponent } from './public-area/public-area.component';
 import { UserService } from './services/user/user-services';
 import { RequestWrapperService } from './services/common/request-wrapper.services';
+import { LoginDashboardComponent } from './dashboard/login/login-dashboard.component';
+import { WelcomeDashBoardComponent } from './dashboard/welcome/welcome-dashboard.component';
+import { DemandasDashBoardComponent } from './dashboard/demands/demandas-dashboard.component';
+import { AuthService} from './services/authorization/authorization-service';
+import { CanActivateViaAuthGuard } from './services/authorization/authorization-guard';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +46,12 @@ import { RequestWrapperService } from './services/common/request-wrapper.service
     ProfessionalItemComponent,
     CoverPageComponent,
     AllCategoriesDetailComponent,
-    RegistryUserComponent
+    RegistryUserComponent,
+    PublicAreaComponent,
+    LoginDashboardComponent,
+    DashBoardComponent,
+    WelcomeDashBoardComponent,
+    DemandasDashBoardComponent
   ],
   imports: [
     AppRoutingModule,
@@ -52,7 +65,9 @@ import { RequestWrapperService } from './services/common/request-wrapper.service
     CategoriesService,
     ProfessionalsService,
     UserService,
-    RequestWrapperService
+    RequestWrapperService,
+    AuthService,
+    CanActivateViaAuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { Category } from './category';
-import { CategoriesService } from "./categories.service";
-
-
+import { Category } from '../category';
+import { CategoriesService } from "../categories.service";
 
 @Component({
   selector: 'root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './public-area.component.html',
+  styleUrls: ['./public-area.scss']
 })
 
-export class AppComponent implements OnInit{
+export class PublicAreaComponent implements OnInit{
   private title = 'iShoddy';
 
   private _categories: Category[];
@@ -19,20 +17,16 @@ export class AppComponent implements OnInit{
   constructor(private _categoriesService: CategoriesService, private _router: Router) { }
 
   ngOnInit() {
-    /*this._categoriesService
+    this._categoriesService
     .getCategories()
     .subscribe((categories: Category[]) => {
       this._categories = categories;
-    });*/
-   // this._router.navigate(["/publicarea"]);
+    });
+    
   }
 
-
-
   sendRegister(){
-    
-    this._router.navigate(["/publicarea/userregistry"]);
-
+    this._router.navigate (['/publicarea', {outlets: {'registry': ['userregistry']}}],  { skipLocationChange: true });
   }
 
 }

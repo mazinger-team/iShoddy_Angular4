@@ -21,14 +21,6 @@ constructor( private _http:Http, private _router : Router ){}
      get(url:string, params?:URLSearchParams, headers?:any){
             return this._http.get(url,  { search: params } )
                       .map( resp =>{
-                            
-                          /*  if( resp.status >= 400 && resp.status < 600){
-                                let headerData : HeaderData = new HeaderData();
-                                let errorData : ErrorData = new ErrorData(resp.statusText,"T","NETWORK")
-                                
-                                 throw new Error(resp.statusText);
-                             }*/
-
                             if( resp.headers.get('Content-Type')=='text/html;charset=ISO-8859-1'){
                                 window.location.href = "/inc/login.jsp";
                                 return Observable.empty(); 
@@ -43,17 +35,8 @@ constructor( private _http:Http, private _router : Router ){}
 
                         if( error.status >= 400 && error.status < 600){
                             let headerData : HeaderData = new HeaderData();
-                           // let errorData : ErrorData = new ErrorData("Error de servidor: " + error.status,"T","Error de servidor: " + error.status)
                              this._router.navigate(['/technicalError']);
                          }
-
-
-                           /* if (this._enviorement.technicalError.errorType === "T"){
-                                this._clientService.setUser( null );
-                                this._router.navigate(['/technicalError']);
-                            }else
-                                return Observable.throw( this._enviorement.technicalError );*/
-
                             return Observable.empty();                
           })
 
@@ -61,10 +44,8 @@ constructor( private _http:Http, private _router : Router ){}
      }
 
       post(url:string, params?:any, headers?:any){
-
             return this._http.post(url,JSON.stringify(params),{ headers: new Headers({ 'Content-Type': 'application/json' }) })
                       .map( resp =>{
-                            console.error('David:' +resp.status);
                             if( resp.headers.get('Content-Type')=='text/html;charset=ISO-8859-1'){
                                  window.location.href = "/inc/login.jsp"; //Parametrizar con una página de error
                                  return Observable.empty(); 
@@ -76,11 +57,12 @@ constructor( private _http:Http, private _router : Router ){}
                            
                       })
                       .catch((error: Response) =>{
+                        
                        if( this.isJson(error) ){ //Error lógico que tiene que llegar al objeto que inició la petición.
                         return Observable.throw( error.json() );
                        }
 
-                           
+                       return Observable.throw( "Lamentamos comunicarle que no se ha podido realizar su petición. Inténtelo pasados unos minutos." );     
           })
 
 
