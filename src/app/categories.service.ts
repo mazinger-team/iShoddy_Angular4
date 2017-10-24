@@ -9,6 +9,8 @@ import { Category } from './category';
 @Injectable()
 export class CategoriesService {
 
+  private static CATEGORY_LIST_ENDPOINT ="/api/v1/categories/";
+
   constructor(private _http: Http) { }
 
   getCategories(): Observable<Category[]> {
@@ -18,8 +20,11 @@ export class CategoriesService {
     // let options = new RequestOptions();
     // options.headers = headers;
 
+
+    
     return this._http
-        .get(environment.url+"categories/")
+       // .get(environment.url+"categories/")
+        .get(environment.base_url + CategoriesService.CATEGORY_LIST_ENDPOINT)
         .map((data: Response) => {
           return data.json();
         })

@@ -1,11 +1,12 @@
 export class UserResponseType {
     private constructor(
-        public success: boolean
+        public _id: string,
+        public email:string
     ) { }
 
     
     static fromJson(json: any): UserResponseType {
-        return new UserResponseType(json.success);
+        return new UserResponseType(json._id,json.email);
       }
     
 }

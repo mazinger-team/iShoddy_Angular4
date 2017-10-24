@@ -45,7 +45,7 @@ export class RegistryUserComponent {
 
     this.userService.newRegistry( this.user ).subscribe(
       resp => {
-       if(resp.success )
+       if(resp._id )
             this.registryManager = true;
       }, error =>{
            this.registryError = false;

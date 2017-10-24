@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Http, Response,URLSearchParams, Headers  } from "@angular/http";
+import { Http, Response,URLSearchParams, Headers,RequestOptions  } from "@angular/http";
 import { Observable } from "rxjs/Observable"
 import { Router , NavigationExtras} from "@angular/router";
 import { HeaderData} from '../../models/common/headerdata';
@@ -15,6 +15,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class RequestWrapperService {
 
+    private static SESSION_AUTH_HEADER : string=undefined;
 
 constructor( private _http:Http, private _router : Router ){}
 
@@ -25,6 +26,7 @@ constructor( private _http:Http, private _router : Router ){}
                                 window.location.href = "/inc/login.jsp";
                                 return Observable.empty(); 
                            }
+
          
                             let body = resp.json();
                                
@@ -44,12 +46,25 @@ constructor( private _http:Http, private _router : Router ){}
      }
 
       post(url:string, params?:any, headers?:any){
-            return this._http.post(url,JSON.stringify(params),{ headers: new Headers({ 'Content-Type': 'application/json' }) })
+       let options = new RequestOptions();
+       if(!headers ){
+        options.headers = new Headers();
+        if( RequestWrapperService.SESSION_AUTH_HEADER )
+            options.headers.append('x-auth',  RequestWrapperService.SESSION_AUTH_HEADER);
+        options.headers.append('Content-Type', 'application/json');
+       }else{
+        options.headers = headers;
+       }
+
+            return this._http.post(url,JSON.stringify(params), options )
                       .map( resp =>{
                             if( resp.headers.get('Content-Type')=='text/html;charset=ISO-8859-1'){
                                  window.location.href = "/inc/login.jsp"; //Parametrizar con una página de error
                                  return Observable.empty(); 
                             }
+
+                            if( resp.headers.get('x-auth'))
+                                     RequestWrapperService.SESSION_AUTH_HEADER = resp.headers.get('x-auth');
          
                             let body = resp.json();
                              

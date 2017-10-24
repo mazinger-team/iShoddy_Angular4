@@ -12,8 +12,8 @@ import { RequestWrapperService } from '../common/request-wrapper.services';
 
 @Injectable()
 export class UserService {
-  private static USER_REGISTRY_ENDPOINT ="/api/v1/user/user";
-  private static USER_LOGIN_ENDPOINT ="/api/v1/user/user";
+  private static USER_REGISTRY_ENDPOINT ="/api/v1/user/";
+  private static USER_LOGIN_ENDPOINT ="/api/v1/user/login";
   constructor(private requestWrapperService: RequestWrapperService) { }
 
   newRegistry(user:UserRequestType): Observable<UserResponseType> {

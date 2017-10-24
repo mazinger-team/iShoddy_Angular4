@@ -56,8 +56,8 @@ export class LoginDashboardComponent{
           },error =>{
             this.showError = true;
             this.showText ='(*)' + error;
-            sessionStorage.setItem("AccessIshoddy", "granted"); 
-            this._router.navigate(['/dashboard']);
+            //sessionStorage.setItem("AccessIshoddy", "granted"); 
+            //this._router.navigate(['/dashboard']);
     } );
 
   }
