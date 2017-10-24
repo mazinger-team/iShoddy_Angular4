@@ -20,10 +20,10 @@ agm-map {
 }
 
 .professional-image {
-    display: none;
+    display: initial;
 }
 
-@media (min-width: $grid-breakpoint-lg) {
+@media (min-width: $grid-breakpoint-md) {
     .jobs span, .professional-image {
         display:initial;
     }

@@ -1,10 +1,6 @@
 <div class="score-card">
-  <p class="score-comments">1201 <span class="text-comments">comentarios</span></p>
+  <p class="score-comments">{{ reviews_number }} <span class="text-comments">comentarios</span></p>
   <p class="score-stars">
-    <i class="fa fa-star" aria-hidden="true"></i>
-    <i class="fa fa-star" aria-hidden="true"></i>
-    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-    <i class="fa fa-star-o" aria-hidden="true"></i>
-    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i *ngFor="let star of stars" class="fa fa-star{{ star == 0 ? '-o' : (star == 0.5 ? '-half-o' : '') }}" aria-hidden="true"></i>
   </p>
 </div>

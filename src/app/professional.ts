@@ -37,7 +37,7 @@ export class Professional {
     
       static fromJson(json: any): Professional {
         return new Professional(
-            json.id,
+            json._id,
             json.user_name,
             json.user_id,
             json.category,
@@ -70,7 +70,7 @@ export class Professional {
     }
     
     static fromJsonToList(json: any): Professional[] {
-        return (json as any[]).map((Proffessional: any): Professional => Proffessional.fromJson(Proffessional));
+        return (json as any[]).map((Professional: any): Professional => this.fromJson(Professional));
     }
 
 }

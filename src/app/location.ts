@@ -5,10 +5,14 @@ export class Location {
     ) { }
     
       static fromJson(json: any): Location {
-        return new Location (
-          json.coordinates[1],
-          json.coordinates[0]
-        );
+        if (json) {
+          return new Location (
+            json.coordinates[1],
+            json.coordinates[0]
+          );
+        } else {
+          return new Location(undefined, undefined);
+        }
       }
     
       static fromJsonToList(json: any): Location[] {
