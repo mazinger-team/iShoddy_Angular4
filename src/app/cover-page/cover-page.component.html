@@ -1,4 +1,5 @@
-<ishoddy-categories-list *ngIf="!_showProfessionals" (categorySelected)="showCategory($event)" [categories]="categories" ></ishoddy-categories-list>
-<ishoddy-professional-detail *ngIf="_showProfessionals && _professional.id" [professional]="_professional" ></ishoddy-professional-detail> 
-<ishoddy-professionals-list *ngIf="_showProfessionals" (professionalSelected)="showProfessional($event)" (showCategories)="showProfessionals()" [category]="_category"></ishoddy-professionals-list>
-
+<div class="outlet">
+    <ishoddy-categories-list *ngIf="!_showProfessionals" (categorySelected)="showCategory($event)" [categories]="categories" ></ishoddy-categories-list>
+    <ishoddy-professional-detail *ngIf="_showProfessionals && _professional.id" [professional]="_professional" ></ishoddy-professional-detail> 
+    <ishoddy-professionals-list *ngIf="_showProfessionals" (professionalSelected)="showProfessional($event)" (showCategories)="showProfessionals()" [category]="_category"></ishoddy-professionals-list>
+</div>

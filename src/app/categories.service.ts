@@ -23,8 +23,8 @@ export class CategoriesService {
 
     
     return this._http
-       // .get(environment.url+"categories/")
-        .get(environment.base_url + CategoriesService.CATEGORY_LIST_ENDPOINT)
+        .get(environment.url+"categories/")
+       // .get(environment.base_url + CategoriesService.CATEGORY_LIST_ENDPOINT)
         .map((data: Response) => {
           return data.json();
         })

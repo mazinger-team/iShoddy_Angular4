@@ -16,10 +16,11 @@ import { CanActivateViaAuthGuard } from "../services/authorization/authorization
     RouterModule.forRoot([
       {
         path: "",
-        component: CoverPageComponent
-      },{
-        path: "userregistry",
-        component: RegistryUserComponent
+        redirectTo: "publicarea",
+        pathMatch: 'full'
+//        resolve: {
+//           articles: ArticlesResolveService
+//         }
       },
       {
         path: "publicarea",
