@@ -1,0 +1,58 @@
+.header {
+    background-color: #8E44AD;
+    color: white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+}
+
+.logo-grp {
+    width: 150px;
+    height: 50px;
+}
+
+.header .logo {
+    margin: 8px;
+    vertical-align: middle;
+}
+
+.iShoddy {
+    height: 100%;
+}
+
+.search-grp {
+    width: 60px;
+    height: 50px;
+    transition: width 0.3s ease-in-out;
+}
+
+.search-grp.active {
+    width: 250px;
+}
+
+button#search {
+    border: 0px;
+    color: white;
+    background-color: #8E44AD;
+    width: 50px;
+	height: 100%;
+	padding: 0;
+    display: inline-table;
+}
+
+.active .input-search {
+    visibility: visible;
+}
+
+.input-search {
+    visibility: collapse;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid white;
+    border-radius: 0;
+}

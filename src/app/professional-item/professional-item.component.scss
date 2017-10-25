@@ -1,0 +1,72 @@
+@import '../../assets/custom';
+
+.professional-item {
+    background-color: $gray-light;
+    width: 200px;
+    border-radius: 20px;
+    margin: $card-deck-margin;
+}
+
+.stars {
+    display: block;
+    text-align: left;
+}
+
+@media (max-width: $grid-breakpoint-sm - 1) {
+    .professional-item  {
+        width: calc(100vw - 60px);
+    }
+
+    .stars {
+        text-align: center;
+    }
+}
+
+.professional-item img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid $gray-light;
+    min-width: 100%;
+    min-height: 150px;
+    background-color: white;
+    text-align: center;
+    font-size: $font-size-sm;
+}
+
+.name, .category, .classification p {
+    text-align: center;
+    margin: 0;
+}
+
+.name {
+    font-size: $font-size-lg;
+}
+
+.data-prof {
+    width: 100%;
+}
+
+.classification, .more-info {
+    width: 50%;
+    padding: 5px;
+}
+
+.classification {
+    float: left;
+}
+
+.data-prof .fa {
+    color: $brand-primary;
+}
+
+.classification p {
+    font-size: $font-size-sm;
+}
+
+.more-info {
+    float: right;
+}
+
+.end-data-prof {
+    clear: both;    
+}

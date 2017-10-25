@@ -1,0 +1,6 @@
+<div class="score-card">
+  <p class="score-comments">{{ reviews_number }} <span class="text-comments">comentarios</span></p>
+  <p class="score-stars">
+    <i *ngFor="let star of stars" class="fa fa-star{{ star == 0 ? '-o' : (star == 0.5 ? '-half-o' : '') }}" aria-hidden="true"></i>
+  </p>
+</div>

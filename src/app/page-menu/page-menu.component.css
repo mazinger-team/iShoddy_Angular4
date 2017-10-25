@@ -1,0 +1,140 @@
+#navbar_collapse {
+	display: none;
+}
+
+#menu {
+	position: static;
+	display: table;
+	visibility: visible;
+    opacity: 1;
+    height: 100%;
+}
+
+#collapse_button {
+	display:none;
+	font-family: 'Fontawesome';
+	font-size: 1.6em;
+	position: fixed;
+	top: 3px;
+	right: 3px;
+	z-index:99;
+	color: white;
+}
+
+#navbar_collapse ~ #collapse_button:after {
+	content: "\f0c9"; /* fa-bars */
+	color: #cecece;
+}
+
+#navbar_collapse:checked ~ #collapse_button:after, .cross_safari {
+	content: "\f00d"; /* fa-time */
+	color: #cecece; 
+}
+
+.navigation.active {
+	right: 0px;
+}
+
+.navigation {
+	height: 100%;
+}
+
+@media (min-width: 481px) {
+	.navigation {
+		height: 80px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.navigation {
+		height: 50px;
+		width: 100%;
+	}
+}
+
+.navigation ul {
+	padding-left: 0;
+}
+
+.navigation li {
+	display: table-cell;
+	min-width: 180px;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    padding-left: 0px;
+}
+
+.navigation li.narrow {
+	min-width: 40px;
+}
+
+.navigation a {
+	text-decoration: none;
+	color:white;
+}
+
+.navigation a:hover, .navigation a.active {
+	border-bottom: 2px solid white;
+}
+
+.invisible-nav {
+	display: none;
+}
+
+.visible-nav {
+	display: inherit;
+}
+
+@media (max-width: 1019px) { 
+	.invisible-nav {
+		display:inherit;
+	}
+	
+	.visible-nav {
+		display: none;
+	}
+
+	.navigation ul {
+		margin: 0;
+	}
+	
+	.navigation li {
+		width: 100%;
+		height: auto;
+		background-color: #B7A425;
+	}
+	
+	#navbar_collapse {
+		display: none;
+	}
+	
+	#collapse_button {
+		display: block;
+	}
+	
+	#menu {
+		z-index: 98;
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: -156px;
+		visibility:hidden;
+		opacity: 0;
+		-webkit-transition: all 0.2s ease-in-out;
+		   -moz-transition: all 0.2s ease-in-out;
+		     -o-transition: all 0.2s ease-in-out;
+	            transition: all 0.2s ease-in-out;
+	}
+
+	#navbar_collapse:checked ~ #menu, .nav_visible_safari{
+		visibility:visible;
+		opacity: 1;
+		top: -35px;
+		z-index:98;
+		-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+		   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+		        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+	}
+
+}

@@ -1,0 +1,81 @@
+<div class="container">
+    <ishoddy-header-bar></ishoddy-header-bar>
+   
+    
+    <div class="row carousel">
+        <ngb-carousel class="hidden-xs-down">
+            <ng-template ngbSlide>
+                <div class="lighten">
+                    <img src="../assets/images/services.jpg" alt="Fondo de un lápiz sobre un plano">
+                </div>
+                <div class="text-primary carousel-caption">
+                    <h1>Solicita un servicio</h1>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> - Selecciona una categoría.</li>
+                        <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> - Indica lo que necesitas...</li>
+                        <li><i class="fa fa-clock-o" aria-hidden="true"></i> - y elige una solución.</li>
+                    </ul>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="lighten">
+                        <img src="../assets/images/budget.jpg" alt="Fondo de un lápiz sobre un plano"  class="lighten">
+                </div>
+                <div class="text-primary carousel-caption">
+                    <h1>Ofrece un servicio</h1>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-paper-plane" aria-hidden="true"></i> - Recibe demandas en tu correo.</li>
+                        <li><i class="fa fa-eur" aria-hidden="true"></i> - Envía tu presupuesto...</li>
+                        <li><i class="fa fa-wrench" aria-hidden="true"></i> - y comienza a trabajar.</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ngb-carousel>        
+        <button (click)="sendRegister()" type="button" class="btn btn-primary">
+            <i class="fa fa-user fa-lg" aria-hidden="true"></i> Regístrate 
+        </button>
+    </div>
+    <div>
+        <router-outlet name="public-area"></router-outlet>
+    </div>
+    
+    <div class="row download-app">
+        <div class="col mobile-app">
+            <div class="row">
+                <img class="img-fluid col-sm-6 hidden-sm-down" src="assets/images/bajarApp.jpg" alt="chica mostrando nuestra app">
+                <div class="col-md-6 cta-download">
+                    <p>Hemos hecho aún más fácil obtener lo que quieres, donde quiera que estés. Envía solicitudes y recibe presupuestos desde cualquier lugar con la aplicación móvil de iShoddy.</p>
+                    <button type="button" class="btn btn-secondary btn-md-up-lg pull-right btn-apple">
+                        <i class="fa fa-apple fa-lg" aria-hidden="true"></i> Descarga 
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-md-up-lg btn-android">
+                            <i class="fa fa-android fa-lg" aria-hidden="true"></i> Descarga 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <ishoddy-all-categories [categories]="_categories"></ishoddy-all-categories>
+  
+    <footer class="row">
+        <div class="col-6">
+            <div class="logo-grp">
+                    <img  class="logo" src="assets/images/logo.png" alt="logo ishoddy">
+                    <span class="iShoddy">iShoddy</span>
+            </div>
+            <p>Quienes somos</p>
+            <p>Contacto</p>
+        </div>
+        <div class="col-6">
+            <p class="text-right">Descargar iShoddy <i class="fa fa-apple fa-lg" aria-hidden="true"></i> <i class="fa fa-android fa-lg" aria-hidden="true"></i></p>
+            <p class="text-right">Condiciones del servicio</p>
+            <p class="text-right">Privacidad</p>
+        </div>
+        <div class="row copyright">
+                <p class="text-center">Copyright &copy; 2017 iShoddy &copy; de sus respectivos propietarios</p>
+        </div>
+    </footer>
+  </div>
+  
+  

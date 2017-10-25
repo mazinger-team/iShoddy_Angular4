@@ -1,3 +1,15 @@
+# Instalar localmente
+
+Descargar y ejecutar 
+
+~~~~
+ $ npm install
+ $ npm start
+~~~~
+
+Deberá configurarse `src/environments/environment.ts` para que acceda a las apis de servicio en local.
+
+
 # Instalar angular 4 con instalaciones previas
 
 Teclear las siguientes instrucciones

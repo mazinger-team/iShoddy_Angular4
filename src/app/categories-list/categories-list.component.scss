@@ -1,0 +1,25 @@
+@import '../../assets/custom';
+
+.categories-list {
+    background-color: white;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+    font-weight: 300;
+}
+
+ishoddy-category-item {
+    width: auto;
+}
+
+@media (max-width: $grid-breakpoint-md - 1) {
+    ishoddy-category-item {
+        width: 100%;
+    }
+    
+}
+
