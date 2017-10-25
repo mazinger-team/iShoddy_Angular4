@@ -1,0 +1,23 @@
+*[layRelative] {
+    position: relative;
+}
+
+*[layAbsolute] {
+    position: absolute;
+}
+
+*[layBottom] {
+    bottom: $card-deck-margin;
+}
+
+*[layTop] {
+    top: $card-deck-margin;
+}
+
+*[layRight] {
+    right: $card-deck-margin;
+}
+
+*[layLeft] {
+    left: $card-deck-margin;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 import { Category } from './../category';
 import { CategoriesService } from './../categories.service';
@@ -10,12 +10,12 @@ import { CategoriesService } from './../categories.service';
   styleUrls: ['./categories-list.component.scss']
 })
 export class CategoriesListComponent implements OnInit {
-
-  private _categories: Category[];
+//  private _categories: Category[];
 
   constructor(private _categoriesService: CategoriesService) { }
 
-  @Output() categorySelected: EventEmitter<Category> = new EventEmitter<Category>();
+  @Input("categories") _categories: Category[];
+  @Output() categorySelected: EventEmitter<object> = new EventEmitter<object>();
   
   ngOnInit() {
     //obtiene las categorías;
@@ -32,7 +32,7 @@ export class CategoriesListComponent implements OnInit {
   }
 
   showProfessionals(category: Category):void {
-    this.categorySelected.emit(category);
+    this.categorySelected.emit({allCategories: this._categories, categorySelected:category});
   }
 
 

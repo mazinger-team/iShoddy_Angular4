@@ -14,6 +14,7 @@ export class ProfessionalsListComponent implements OnChanges {
 
   @Input() category: string;
   @Output() showCategories: EventEmitter<void> = new EventEmitter<void>();
+  @Output() professionalSelected: EventEmitter<object> = new EventEmitter<object>();
   
   private _professionals: Professional[];
 
@@ -38,6 +39,9 @@ export class ProfessionalsListComponent implements OnChanges {
          });
   }
 
+  showProfessional(professional: Object): void {
+    this.professionalSelected.emit(professional);    
+  }
 }
 
 

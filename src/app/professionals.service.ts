@@ -19,7 +19,18 @@ export class ProfessionalsService {
           return data.json();
         })
         .map((json: any) => {
-          return json.listProfessionalsOutputType.professionals as Professional[];
+          return Professional.fromJsonToList(json.listProfessionalsOutputType.professionals);
+        });
+  }
+
+  getProfessional(id: string): Observable<Professional> {
+    return this._http
+        .get(environment.url + "professionals/?id=" +id)
+        .map((data: Response) => {
+          return data.json();
+        })
+        .map((json : any) => {
+          return Professional.fromJson(json.getProfessionalDetailOutputType.professional);
         });
   }
 }

@@ -1,0 +1,33 @@
+@import '../../assets/custom';
+
+agm-map {
+    height: 100%;
+    margin: 0;
+}
+
+.professional-det {
+    font-weight: 300;
+    font-size: $font-size-sm;
+    min-height: 300px;
+}
+
+.jobs img {
+    width: 32px;
+}
+
+.jobs span {
+    display:none;
+}
+
+.professional-image {
+    display: initial;
+}
+
+@media (min-width: $grid-breakpoint-md) {
+    .jobs span, .professional-image {
+        display:initial;
+    }
+    .professional-det {
+        min-height: initial;
+    }
+} 

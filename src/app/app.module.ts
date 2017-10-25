@@ -33,6 +33,10 @@ import { DemandasDashBoardComponent } from './dashboard/demands/demandas-dashboa
 import { AuthService} from './services/authorization/authorization-service';
 import { CanActivateViaAuthGuard } from './services/authorization/authorization-guard';
 
+import { ProfessionalDetailComponent } from './professional-detail/professional-detail.component';
+
+import { AgmCoreModule } from '@agm/core';
+import { ScoreCardComponent } from './score-card/score-card.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,9 @@ import { CanActivateViaAuthGuard } from './services/authorization/authorization-
     LoginDashboardComponent,
     DashBoardComponent,
     WelcomeDashBoardComponent,
-    DemandasDashBoardComponent
+    DemandasDashBoardComponent,
+    ProfessionalDetailComponent,
+    ScoreCardComponent
   ],
   imports: [
     AppRoutingModule,
@@ -59,7 +65,10 @@ import { CanActivateViaAuthGuard } from './services/authorization/authorization-
     BrowserModule,
     HttpModule,
     NoopAnimationsModule,
-    NgbModule.forRoot()
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBbb-s1UDI_g9IJUzObN-DQE7qDehtOPpg	'
+    }),
+    NgbModule.forRoot(),
   ],
   providers: [
     CategoriesService,

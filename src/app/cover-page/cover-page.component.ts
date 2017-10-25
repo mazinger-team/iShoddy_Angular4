@@ -10,22 +10,28 @@ import { Category } from '../category';
 export class CoverPageComponent {
 
   private _category:string = "";
+  private categories: Category[];
   private _showProfessionals = false;
-  
+  private _professional = {};
 
   constructor() { }
 
-  showCategory(category: Category):void {
-    this._category = category._id;
+  showCategory(data: object):void {
+    this._category = data["categorySelected"]._id;
+    this.categories = data["allCategories"];
     this._showProfessionals = true;
+    this._professional = {};
     window.scrollTo(0, 0)
   }
   
-  showProfessional():void {
+  showProfessionals():void {
     this._showProfessionals = false;
     window.scrollTo(0, 0)
   }
     
+  showProfessional(professional: object):void {
+    this._professional = professional;
+  }
   
 }
 

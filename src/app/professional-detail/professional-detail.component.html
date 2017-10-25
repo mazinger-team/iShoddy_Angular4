@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="professional-image col-sm-6 col-md-4">
+      <img  class="img-fluid" src="{{ item.logo_url }}">
+  </div>
+  <div class="col-sm-6 col-md-4 professional-det" layRelative>
+    <h4>{{ item.corp_name }}</h4>
+    <p>{{ item.description }}</p>
+    <ishoddy-score-card layAbsolute layBottom [reviews_number]="item.reviews_number" [rating]="item.rating">></ishoddy-score-card>
+    <div class="jobs" layAbsolute layBottom layRight>
+      <img src="./assets/images/misTrabajos.png">
+      <span>Mis trabajos</span>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <agm-map *ngIf="item.location" [latitude]="item.location.lat" [longitude]="item.location.lng">
+        <agm-marker [latitude]="item.location.lat" [longitude]="item.location.lng"></agm-marker>
+    </agm-map>
+  </div>
+</div>

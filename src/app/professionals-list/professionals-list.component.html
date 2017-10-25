@@ -1,7 +1,6 @@
 <div class="row">
   <div class="professionals-list">
-    <!--ishoddy-proffesional-item *ngFor="let proffesional of _proffesionals" [item]="category"></ishoddy-proffesional-item-->
-    <ishoddy-professional-item *ngFor="let professional of _professionals" [item]="professional"></ishoddy-professional-item>
+    <ishoddy-professional-item *ngFor="let professional of _professionals" [item]="professional" (click)="showProfessional(professional)"></ishoddy-professional-item>
     <div class="blank-state" *ngIf="!_professionals || _professionals.length == 0">Aún no hay profesionales dados de alta.</div>
   </div>
   <button type="button" class="btn goback btn-md-up-lg" (click)="goback()">
