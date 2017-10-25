@@ -17,8 +17,8 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
 import { CategoryItemComponent } from './category-item/category-item.component';
 import { ProfessionalItemComponent } from './professional-item/professional-item.component';
 
-import { CategoriesService } from './categories.service';
-import { ProfessionalsService } from './professionals.service';
+import { CategoriesService } from './services/categories/categories.service';
+import { ProfessionalsService } from './services/professionals/professionals.service';
 import { CoverPageComponent } from './cover-page/cover-page.component';
 import { AllCategoriesDetailComponent } from './all-categories-detail/all-categories-detail.component';
 

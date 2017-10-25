@@ -15,10 +15,6 @@
                         <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> - Indica lo que necesitas...</li>
                         <li><i class="fa fa-clock-o" aria-hidden="true"></i> - y elige una solución.</li>
                     </ul>
-             
-                    <button (click)="sendRegister()" type="button" class="btn btn-primary pull-right">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> Regístrate 
-                    </button>
                 </div>
             </ng-template>
             <ng-template ngbSlide>
@@ -32,16 +28,15 @@
                         <li><i class="fa fa-eur" aria-hidden="true"></i> - Envía tu presupuesto...</li>
                         <li><i class="fa fa-wrench" aria-hidden="true"></i> - y comienza a trabajar.</li>
                     </ul>
-                    <button type="button" class="btn btn-primary pull-right">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> Regístrate 
-                    </button>
-                    </div>
+                </div>
             </ng-template>
         </ngb-carousel>        
+        <button (click)="sendRegister()" type="button" class="btn btn-primary">
+            <i class="fa fa-user fa-lg" aria-hidden="true"></i> Regístrate 
+        </button>
     </div>
     <div>
-        <router-outlet name="registry"></router-outlet>
-        <ishoddy-cover-page></ishoddy-cover-page>
+        <router-outlet name="public-area"></router-outlet>
     </div>
     
     <div class="row download-app">

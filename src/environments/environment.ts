@@ -5,6 +5,5 @@
 
 export const environment = {
   production: false,
-  url: 'http://ec2-54-202-209-58.us-west-2.compute.amazonaws.com/api/v1/',
-  base_url: 'http://localhost:3000'
+  base_url: 'http://ec2-54-202-209-58.us-west-2.compute.amazonaws.com'
 };

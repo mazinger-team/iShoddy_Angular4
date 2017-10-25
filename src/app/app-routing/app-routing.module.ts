@@ -18,16 +18,21 @@ import { CanActivateViaAuthGuard } from "../services/authorization/authorization
         path: "",
         redirectTo: "publicarea",
         pathMatch: 'full'
-//        resolve: {
-//           articles: ArticlesResolveService
-//         }
       },
       {
         path: "publicarea",
         component: PublicAreaComponent,
-        children: [{
-                path: 'userregistry',component: RegistryUserComponent,outlet: 'registry'
-           }
+        children: [
+          {
+            path: "userregistry",
+            component: RegistryUserComponent,
+            outlet: "public-area"
+          },
+          {
+            path: "",
+            component: CoverPageComponent,
+            outlet: "public-area"
+          } 
          ]
 
       }
@@ -51,7 +56,7 @@ import { CanActivateViaAuthGuard } from "../services/authorization/authorization
       ,
       {
         path: "**",
-        redirectTo: "/articles"
+        redirectTo: "publicarea"
       }
     ], { useHash: true , enableTracing: true })
   ],

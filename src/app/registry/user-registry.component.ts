@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { Router } from "@angular/router";
+
 import { UserService} from '../services/user/user-services';
 import { UserRequestType } from './../models/user/user-request-type';
 
 @Component({
   selector: 'user-registry',
-  templateUrl: './user-registry.component.html' //,
-  //styleUrls: ['./category-item.component.scss']
+  templateUrl: './user-registry.component.html',
+  styleUrls: ['./user-registry.component.scss']
 })
 export class RegistryUserComponent {
 
@@ -19,13 +21,10 @@ export class RegistryUserComponent {
   private registryErrorText: string;
   
 
-  constructor( private userService : UserService) {
+  constructor( private userService : UserService, private _router: Router) {
     this.registryManager = false;
     this.registryError = false;
   }
-
-  
-
 
   clickRegisterUser(){
 
@@ -48,10 +47,13 @@ export class RegistryUserComponent {
        if(resp._id )
             this.registryManager = true;
       }, error =>{
-           this.registryError = false;
-           this.registryErrorText =  error.headerData.errorData.errorText;
-       });
+          this.registryError = false;
+          this.registryErrorText =  error.headerData ? error.headerData.errorData.errorText : error;
+      });
   }
 
+  goBack() {
+    this._router.navigate (['/publicarea', {outlets: {'public-area': ['']}}],  { skipLocationChange: true });
+  }
 
 }

@@ -1,6 +1,6 @@
 @import "../../assets/custom";
 
-/*$brand-primary:         #8E44AD; // #337ab7*/
+$brand-primary:         #8E44AD; // #337ab7*/
 
 :focus {
   outline: transparent auto 0px;
@@ -8,6 +8,12 @@
 .carousel img {
     width: 100%;
     height: 22.54%;
+}
+
+.carousel .btn {
+  position:absolute;
+  bottom: $card-deck-margin;
+  right: $card-deck-margin;
 }
 
 .carousel-item li, .carousel-item h1, .text-primary {

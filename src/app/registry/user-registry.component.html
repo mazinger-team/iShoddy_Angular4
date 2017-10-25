@@ -1,53 +1,50 @@
-<div class="ibox float-e-margins">
-    
-    <div class="ibox-content">
-
+<div class="float-e-margins outlet">
+        <i class="fa fa-times fa-lg pull-right text-primary"  aria-hidden="true" (click)="goBack()"></i>
         <div [hidden] = "registryManager">
-        <form  #userRegistry="ngForm" class="form-horizontal" (ngSubmit)="clickRegisterUser()">
-            <p>Hágase cliente ahora¡</p>
-            <div class="form-group">
-                <label class="col-lg-4 control-label">Introduzca su correo electrónico</label>
-                <div class="col-lg-10">
-                    <input type="email" [(ngModel)]="email"  placeholder="Email" class="form-control"
-                       required name="mail" #mail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
-                    <div [hidden]="mail.valid || mail.pristine || modelEmailValidation" style="color: red">
-                      eMail incorrecto.
-               </div>
-                </div>
-            </div>
-            <div class="form-group"><label class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input type="password" placeholder="Password" [(ngModel)]="password" 
-                    name="pass" class="form-control" 
-                    required #pass="ngModel" 
-                    ></div>
-                    <div [hidden]="pass.valid || pass.pristine" style="color: red">
-                            La contraseña introducida no cumple con el siguiente formato. 
-                            <br>Longitud de 8, con caractéres numericos, minúsculas y mayúsculas y algun símbolo (@#$%).
-                     </div><!--pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})"-->
-            </div>
-            <div class="form-group">
-                <div class="col-lg-offset-2 col-lg-10">
-                    <button class=" btn btn-primary" type="submit" [disabled]="!userRegistry.form.valid"  >Aceptar</button>
-                    <div [hidden]="registryManager" style="color: red">
-                        {{registryErrorText}}
+            <form  #userRegistry="ngForm" class="form-horizontal" (ngSubmit)="clickRegisterUser()">
+                <p>Hágase cliente ahora¡</p>
+                <div class="form-group">
+                    <label class="col-lg-4 control-label">Introduzca su correo electrónico</label>
+                    <div class="col-lg-10">
+                        <input type="email" [(ngModel)]="email"  placeholder="Email" class="form-control"
+                        required name="mail" #mail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
+                        <p class="error-msg" [hidden]="mail.valid || mail.pristine || modelEmailValidation" >
+                        eMail incorrecto.
+                        </p>
                     </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group"><label class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                        <input type="password" placeholder="Password" [(ngModel)]="password" 
+                        name="pass" class="form-control" 
+                        required #pass="ngModel">
+                    </div>
+                    <p class="error-msg" [hidden]="pass.valid || pass.pristine" >
+                            La contraseña introducida no cumple con el siguiente formato. 
+                            <br>Longitud de 8, con caractéres numericos, minúsculas y mayúsculas y algun símbolo (@#$%).
+                    </p><!--pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})"-->
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-primary" type="submit" [disabled]="!userRegistry.form.valid"  >Aceptar</button>
+                        <p class="error-msg" [hidden]="registryManager">
+                            {{registryErrorText}}
+                        </p>
+                    </div>
+                </div>
+            </form>
       </div>
       <div class="text-primary"  [hidden] = "!registryManager" >
           <div class="row">
               <div style="float: none; margin: 0 auto;">
-                <i class="fa fa-check-circle-o fa-5 "   style="color:#8E44AD; font-size: 100px;" aria-hidden="true"></i>
+                <i class="fa fa-check-circle-o fa-5x "  aria-hidden="true"></i><!-- style="color:#8E44AD; font-size: 100px;" -->
               </div>
         </div>
         <div class="row">
-            <p class="text-center" style="color:#8E44AD;">
+            <p class="text-center"><!--  style="color:#8E44AD;"-->
                     Felicidades y Bienvenido al maravilloso mundo de iShoddy.<br> Para completar la activación de su usuario, 
                     vaya a su cuenta de correo, seleccione el correo cuyo remitente sea iShoddy y pulse sobre el enlace.
             </p>
         </div>
       </div>
-    </div>
 </div>

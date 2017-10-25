@@ -3,8 +3,8 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/map";
 
-import { environment } from './../environments/environment';
-import { Category } from './category';
+import { environment } from './../../../environments/environment';
+import { Category } from '../../category';
 
 @Injectable()
 export class CategoriesService {
@@ -23,8 +23,7 @@ export class CategoriesService {
 
     
     return this._http
-        .get(environment.url+"categories/")
-       // .get(environment.base_url + CategoriesService.CATEGORY_LIST_ENDPOINT)
+        .get(environment.base_url + CategoriesService.CATEGORY_LIST_ENDPOINT)
         .map((data: Response) => {
           return data.json();
         })

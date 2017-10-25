@@ -22,10 +22,22 @@ body {
     background-color: $gray-lighter;
 }
 
+.btn.btn-primary {
+    background-color: $brand-primary!important;  
+    border-color: $brand-primary!important;  
+}
+
+.btn.btn-secondary {
+    background-color: $gray-light!important;
+    border-color: $gray-light!important;
+    color: $brand-primary!important;
+}
+  
 .outlet {
     margin: 0px -15px;
     padding: 15px;
     background-color: #fff;
+    position: relative;
 }
 
 .carousel-caption {
@@ -38,3 +50,8 @@ ishoddy-professional-detail {
     background-color: #fff;
 }
 
+.error-msg {
+    @extend .text-danger;
+    @extend .font-weight-light;
+    @extend .small;
+}

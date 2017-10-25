@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Category } from '../category';
-import { CategoriesService } from "../categories.service";
+import { CategoriesService } from "../services/categories/categories.service";
 
 @Component({
   selector: 'root',
@@ -26,7 +26,7 @@ export class PublicAreaComponent implements OnInit{
   }
 
   sendRegister(){
-    this._router.navigate (['/publicarea', {outlets: {'registry': ['userregistry']}}],  { skipLocationChange: true });
+    this._router.navigate (['/publicarea', {outlets: {'public-area': ['userregistry']}}],  { skipLocationChange: true });
   }
 
 }

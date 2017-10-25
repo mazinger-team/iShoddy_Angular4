@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Professional } from './../professional';
-import { ProfessionalsService } from './../professionals.service';
+import { ProfessionalsService } from './../services/professionals/professionals.service';
 
 @Component({
   selector: 'ishoddy-professional-detail',

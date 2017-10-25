@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
-import { ProfessionalsService } from './../professionals.service';
+import { ProfessionalsService } from './../services/professionals/professionals.service';
 
 import { Professional } from './../professional';
 import { Category } from './../category';
